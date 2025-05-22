@@ -1,0 +1,109 @@
+$COLOR1: #4488ff;
+$COLOR2: #b43168;
+
+header {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: #000;
+  box-shadow: 0 4px 12px rgba(0, 0, 255, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.logo img {
+  height: 15vh;
+  transition: 0.3s ease;
+  border: 1px solid #fff;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+nav a {
+  color: $COLOR1;
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: $COLOR2;
+}
+
+nav a.reserve {
+  color: #fff;
+  background: $COLOR1;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px #4488ff;
+}
+
+/* Burger menu */
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background: #4488ff;
+  transition: 0.3s;
+}
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .logo img {
+    height: 15vh;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    flex-direction: column;
+    background: #000;
+    width: 100%;
+    padding: 1rem;
+    gap: 1rem;
+    z-index: 10;
+    animation: slideDown 0.3s ease-out;
+    opacity: 0.5;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+  }
+}
+
+
+/* Header logo neon */
+.logo {
+  filter: drop-shadow(0 0 2em #646cffaa);
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #b43168aa);
+}
